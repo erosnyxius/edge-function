@@ -1,16 +1,16 @@
-// This file solves ALL CORS problems forever!
+// এই File টা সব CORS Problem Solve করবে So Important!
 
 export const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
   };
   
-  // Use this for OPTIONS requests
+  // OPTIONS Requests এর জন্য Use করবো 
   export function handleCors() {
     return new Response('ok', { headers: corsHeaders });
   }
   
-  // Use this for successful responses
+  // Successful Responses এর জন্য Use করবো
   export function success(data: any) {
     return new Response(
       JSON.stringify(data),
@@ -21,7 +21,7 @@ export const corsHeaders = {
     );
   }
   
-  // Use this for errors
+  // Errors এর জন্য Use করবো
   export function error(message: string, status = 400) {
     return new Response(
       JSON.stringify({ error: message }),
